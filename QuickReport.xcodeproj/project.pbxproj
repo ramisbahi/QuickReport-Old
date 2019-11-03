@@ -48,7 +48,7 @@
 			children = (
 				36550E39236EEC0000B982D4 /* ImageClassifier.mlmodel */,
 				36550E37236EE7EC00B982D4 /* SecondImageClassifier.mlmodel */,
-				36592F0A236EC79A0000E713 /* QuickThing */,
+				36592F0A236EC79A0000E713 /* QuickReport */,
 				36592F09236EC79A0000E713 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,9 +61,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		36592F0A236EC79A0000E713 /* QuickThing */ = {
+		36592F0A236EC79A0000E713 /* QuickReport */ = {
 			isa = PBXGroup;
 			children = (
+				36592F19236EC79C0000E713 /* Info.plist */,
 				36592F0B236EC79A0000E713 /* AppDelegate.swift */,
 				36B4825E236F2AA7003FCAF0 /* PotholeViewController.swift */,
 				36592F0D236EC79A0000E713 /* SceneDelegate.swift */,
@@ -71,17 +72,16 @@
 				36592F11236EC79A0000E713 /* Main.storyboard */,
 				36592F14236EC79C0000E713 /* Assets.xcassets */,
 				36592F16236EC79C0000E713 /* LaunchScreen.storyboard */,
-				36592F19236EC79C0000E713 /* Info.plist */,
 			);
-			path = QuickThing;
+			path = QuickReport;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		36592F07236EC79A0000E713 /* QuickThing */ = {
+		36592F07236EC79A0000E713 /* QuickReport */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36592F1C236EC79C0000E713 /* Build configuration list for PBXNativeTarget "QuickThing" */;
+			buildConfigurationList = 36592F1C236EC79C0000E713 /* Build configuration list for PBXNativeTarget "QuickReport" */;
 			buildPhases = (
 				36592F04236EC79A0000E713 /* Sources */,
 				36592F05236EC79A0000E713 /* Frameworks */,
@@ -91,7 +91,7 @@
 			);
 			dependencies = (
 			);
-			name = QuickThing;
+			name = QuickReport;
 			productName = QuickThing;
 			productReference = 36592F08236EC79A0000E713 /* QuickReport.app */;
 			productType = "com.apple.product-type.application";
@@ -111,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 36592F03236EC79A0000E713 /* Build configuration list for PBXProject "QuickThing" */;
+			buildConfigurationList = 36592F03236EC79A0000E713 /* Build configuration list for PBXProject "QuickReport" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				36592F07236EC79A0000E713 /* QuickThing */,
+				36592F07236EC79A0000E713 /* QuickReport */,
 			);
 		};
 /* End PBXProject section */
@@ -331,7 +331,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		36592F03236EC79A0000E713 /* Build configuration list for PBXProject "QuickThing" */ = {
+		36592F03236EC79A0000E713 /* Build configuration list for PBXProject "QuickReport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				36592F1A236EC79C0000E713 /* Debug */,
@@ -340,7 +340,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		36592F1C236EC79C0000E713 /* Build configuration list for PBXNativeTarget "QuickThing" */ = {
+		36592F1C236EC79C0000E713 /* Build configuration list for PBXNativeTarget "QuickReport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				36592F1D236EC79C0000E713 /* Debug */,
