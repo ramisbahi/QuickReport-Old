@@ -22,7 +22,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet var IssueCollection: [UIButton]!
     
-    @IBOutlet weak var SubmitButton: UIButton!
+    @IBOutlet weak var NextButton: UIButton!
+    
     
     @IBOutlet weak var IssueButton: UIButton!
     
@@ -122,7 +123,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func makeButtonsAppear()
     {
-        SubmitButton.isHidden = false
+        NextButton.isHidden = false
         IssueButton.isHidden = false
     }
     
@@ -137,6 +138,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         model = SecondImageClassifier()
     }
 
-
+    
+    @IBAction func nextTapped(_ sender: Any) {
+        if currentIssueIndex == 0
+        {
+            performSegue(withIdentifier: "potholeSegue", sender: self)
+        }
+    }
 }
 
