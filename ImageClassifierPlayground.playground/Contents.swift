@@ -6,7 +6,6 @@ Invokes Create ML to train images of flowers.
 */
 
 import CreateMLUI
-
 let trainingClassifier = MLImageClassifierBuilder()
 
 trainingClassifier.showInLiveView()
