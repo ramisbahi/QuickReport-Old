@@ -177,7 +177,9 @@ class PotholeViewController: UIViewController, MFMailComposeViewControllerDelega
             
             mail.setSubject("Pothole Report")
             mail.setMessageBody("<p><br><br>Dear Mr. Thomas Bonfield, <br>Hello! I hope you’re doing well. There is a \(size) pothole here at the location: 1328 Campus Dr, Durham, NC 27708. It \(avoidance) be safely avoided. \(additionalPotHoles)I would greatly appreciate it if a team could be dispatched to fix this issue in the near future.<br><br>Sincerely,<br>A Durham resident<p>", isHTML: true)
-            mail.addA
+            
+            //let imageData: NSData =
+            //mail.addAttachmentData(imageData, mimeType: "image/png", fileName: "imageName.png")
             
             present(mail, animated: true)
         }
@@ -185,6 +187,7 @@ class PotholeViewController: UIViewController, MFMailComposeViewControllerDelega
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
             controller.dismiss(animated: true)
+        
     }
     
     /*func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
