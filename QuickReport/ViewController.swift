@@ -142,7 +142,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func nextTapped(_ sender: Any) {
         if currentIssueIndex == 0
         {
-            performSegue(withIdentifier: "potholeSegue", sender: self)
+            self.performSegue(withIdentifier: "potholeSegue", sender: nil)
         }
     }
 }

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -164,7 +164,7 @@
                         <outletCollection property="IssueCollection" destination="rkM-Yb-H9h" collectionClass="NSMutableArray" id="Yqc-ho-B5R"/>
                         <outletCollection property="IssueCollection" destination="wnl-J1-wFd" collectionClass="NSMutableArray" id="pbT-bK-xBP"/>
                         <outletCollection property="IssueCollection" destination="jVm-lk-ed2" collectionClass="NSMutableArray" id="2O9-6c-7fU"/>
-                        <segue destination="ZJq-rk-Kvs" kind="showDetail" identifier="potholeSegue" animates="NO" id="yAf-dv-Uqf"/>
+                        <segue destination="ZJq-rk-Kvs" kind="presentation" identifier="potholeSegue" animates="NO" modalPresentationStyle="fullScreen" id="yAf-dv-Uqf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -176,7 +176,7 @@
             <objects>
                 <viewController id="ZJq-rk-Kvs" customClass="PotholeViewController" customModule="QuickReport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oKX-XQ-ErA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repair Pothole" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v4-ga-OhD">
