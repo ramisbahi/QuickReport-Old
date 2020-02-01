@@ -1,12 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UBZ-4g-uSy">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="TmM-q7-Z5M">
+            <objects>
+                <viewController id="UBZ-4g-uSy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hyz-Nv-ESA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLW-k0-sB5">
+                                <rect key="frame" x="82" y="243" width="250" height="250"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="QcE-cr-NfV"/>
+                                    <constraint firstAttribute="height" constant="250" id="XBH-cv-izx"/>
+                                </constraints>
+                                <state key="normal" image="camera-cropped"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="125"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QuickReport" translatesAutoresizingMaskIntoConstraints="NO" id="Mzf-0K-mf3">
+                                <rect key="frame" x="20" y="20" width="207" height="69"/>
+                                <color key="backgroundColor" red="0.019607843140000001" green="0.019607843140000001" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mzf-0K-mf3" secondAttribute="height" multiplier="3" id="heM-bT-7Xd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Mzf-0K-mf3" firstAttribute="width" secondItem="hyz-Nv-ESA" secondAttribute="width" multiplier="0.5" id="KoV-Zb-gPg"/>
+                            <constraint firstItem="Mzf-0K-mf3" firstAttribute="top" secondItem="Jjm-9a-cvT" secondAttribute="top" constant="20" id="O6w-bc-YtM"/>
+                            <constraint firstItem="Mzf-0K-mf3" firstAttribute="leading" secondItem="Jjm-9a-cvT" secondAttribute="leading" constant="20" id="U0w-VI-DMv"/>
+                            <constraint firstItem="tLW-k0-sB5" firstAttribute="centerY" secondItem="hyz-Nv-ESA" secondAttribute="centerY" id="aLF-Im-4Nw"/>
+                            <constraint firstItem="tLW-k0-sB5" firstAttribute="centerX" secondItem="hyz-Nv-ESA" secondAttribute="centerX" id="eJg-RH-b2Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jjm-9a-cvT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6i-bv-9JT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-680" y="118"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -136,10 +186,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QuickReport" translatesAutoresizingMaskIntoConstraints="NO" id="Mzf-0K-mf3">
-                                <rect key="frame" x="20" y="20" width="154" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -413,5 +459,6 @@
     </scenes>
     <resources>
         <image name="QuickReport" width="1214" height="172"/>
+        <image name="camera-cropped" width="366.66665649414062" height="366.66665649414062"/>
     </resources>
 </document>

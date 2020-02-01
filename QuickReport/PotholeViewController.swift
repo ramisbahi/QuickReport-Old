@@ -127,18 +127,15 @@ class PotholeViewController: UIViewController, MFMailComposeViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*locManager.requestWhenInUseAuthorization()
+        locManager.requestWhenInUseAuthorization()
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
                 CLLocationManager.authorizationStatus() ==  .authorizedAlways){
 
-              guard let currentLocation = locManager.location else
-              {
-                return
-                }
+              currentLocation = locManager.location
               print(currentLocation.coordinate.latitude)
               print(currentLocation.coordinate.longitude)
 
-        }*/
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -171,24 +168,79 @@ class PotholeViewController: UIViewController, MFMailComposeViewControllerDelega
                 additionalPotHoles = "There are multiple potholes like this in the area. "
             }
             
-            //print(currentLocation.coordinate.latitude)
-            //print(currentLocation.coordinate.longitude)
+            print(currentLocation.coordinate.latitude)
+            print(currentLocation.coordinate.longitude)
             
-            //let address = getAddressFromLatLon(pdblLatitude: String(currentLocation.coordinate.latitude), withLongitude: String(currentLocation.coordinate.longitude))
+            getPlacemark(forLocation: currentLocation) {
+                (originPlacemark, error) in
+                    print("we are here!")
+                    if let err = error
+                    {
+                        print(err)
+                    }
+                    else if let pm = originPlacemark
+                    {
+                        var addressString : String = ""
+                        if pm.thoroughfare != nil {
+                            addressString = addressString + pm.thoroughfare! + "<br>" // address
+                        }
+                        if pm.locality != nil {
+                            addressString = addressString + pm.locality! + ", " // city
+                        }
+                        if pm.country != nil {
+                            addressString = addressString + pm.administrativeArea! + ", " // state
+                        }
+                        if pm.postalCode != nil {
+                            addressString = addressString + pm.postalCode! + "<br>" // zip code
+                        }
+                        if pm.postalCode != nil {
+                            addressString = addressString + pm.country! + " "
+                        }
+                        mail.setSubject("Pothole Report")
+                        mail.setMessageBody("<p>Dear Mr. Thomas Bonfield, <br><br>Hello! I hope you’re doing well. There is a \(size) pothole at \(pm.subLocality ?? "a place near me") at these address and coordinates: <br><br>\(addressString)<br><br>\(self.currentLocation.coordinate.latitude), \(self.currentLocation.coordinate.longitude)<br><br> The pothole \(avoidance) be safely avoided. \(additionalPotHoles)I would greatly appreciate it if a team could be dispatched to fix this issue in the near future.<br><br>Sincerely,<br>A Durham resident<p>", isHTML: true)
+                        
+                        //let imageData: NSData =
+                        //mail.addAttachmentData(imageData, mimeType: "image/png", fileName: "imageName.png")
+                        
+                        self.present(mail, animated: true)
+                    }
+            }
+                
+                //let address = getAddressFromLatLon(pdblLatitude: String(currentLocation.coordinate.latitude), withLongitude: String(currentLocation.coordinate.longitude))
+                
             
-            mail.setSubject("Pothole Report")
-            mail.setMessageBody("<p>Dear Mr. Thomas Bonfield, <br><br>Hello! I hope you’re doing well. There is a \(size) pothole here at the location: 1328 Campus Dr, Durham, NC 27708. It \(avoidance) be safely avoided. \(additionalPotHoles)I would greatly appreciate it if a team could be dispatched to fix this issue in the near future.<br><br>Sincerely,<br>A Durham resident<p>", isHTML: true)
-            
-            //let imageData: NSData =
-            //mail.addAttachmentData(imageData, mimeType: "image/png", fileName: "imageName.png")
-            
-            present(mail, animated: true)
         }
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
             controller.dismiss(animated: true)
         
+    }
+    
+    func getPlacemark(forLocation location: CLLocation, completionHandler: @escaping (CLPlacemark?, String?) -> ()) {
+        let geocoder = CLGeocoder()
+
+        geocoder.reverseGeocodeLocation(location, completionHandler: {
+            (placemarks, error) in
+
+            if let err = error {
+                completionHandler(nil, err.localizedDescription)
+            }
+            else if let placemarkArray = placemarks {
+                if let placemark = placemarkArray.first
+                {
+                    completionHandler(placemark, nil)
+                }
+                else
+                {
+                    completionHandler(nil, "Placemark was nil")
+                }
+            }
+            else {
+                completionHandler(nil, "Unknown error")
+            }
+        })
+
     }
     
     /*func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
